@@ -35,6 +35,24 @@ class LinkedList:
             last = last.next
         last.next = new
 
+    def remove(self, idx):
+        current = self.head
+        last = None
+        index = 0
+        while current:
+            if index == idx:
+                if current is self.head:
+                    self.head = current.next
+                    del current
+                    return True
+                last.next = current.next
+                del current
+                return True
+            last = current
+            current = current.next
+            index += 1
+        raise IndexError('list index out of range') 
+
     def __str__(self):
         last = self.head
         result = '['
@@ -51,5 +69,7 @@ if __name__ == "__main__":
     print('Index: 0 Data: ', linked_list.get(0))
     print('Data: 1 Index: ', linked_list.search(1))
     print('Data: 0 Index: ', linked_list.search(0))
+    print(linked_list)
+    linked_list.remove(0)
     print(linked_list)
 
