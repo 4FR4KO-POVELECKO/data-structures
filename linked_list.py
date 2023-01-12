@@ -55,6 +55,8 @@ class LinkedList:
 
     def __str__(self):
         last = self.head
+        if not self.head:
+            return '[]'
         result = '['
         while last:
             result += f'{last.data}, '
