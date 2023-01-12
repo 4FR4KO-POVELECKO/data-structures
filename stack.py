@@ -11,7 +11,9 @@ class Stack:
         self.head = new
 
     def pop(self):
-        self.head = self.head.next
+        last = self.head
+        self.head = last.next
+        del last
 
     def pip(self):
         last = self.head
