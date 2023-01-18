@@ -2,6 +2,7 @@
 
 
 Реализация структур данных:
+- [массив](https://github.com/4FR4KO-POVELECKO/data-structures/blob/master/arr.py)
 - [связный список](https://github.com/4FR4KO-POVELECKO/data-structures/blob/master/linked_list.py)
 - [стек](https://github.com/4FR4KO-POVELECKO/data-structures/blob/master/stack.py)
 - [очередь](https://github.com/4FR4KO-POVELECKO/data-structures/blob/master/queue.py)
