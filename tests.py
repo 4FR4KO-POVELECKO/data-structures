@@ -4,6 +4,7 @@ from arr import Array
 from linked_list import LinkedList
 from que import Queue
 from stack import Stack
+from set import Set
 
 
 class TestDataStructures(unittest.TestCase):
@@ -61,6 +62,25 @@ class TestDataStructures(unittest.TestCase):
         stack.pop()
         assert stack.head.data == 1
         assert stack.head.next == None
+
+    def test_set(self):
+        a = Set()
+        a.add(1)
+        a.add(2)
+        a.add(3)
+
+        b = Set()
+        b.add(3)
+        b.add(4)
+        b.add(5)
+        
+        assert all(x1 == x2 for x1, x2 in zip(a.union(b), [1, 2, 3, 4, 5]))
+        assert all(x1 == x2 for x1, x2 in zip(a.intersection(b), [3]))
+        assert all(x1 == x2 for x1, x2 in zip(a.difference(b), [1, 2]))
+        assert all(x1 == x2 for x1, x2 in zip(b.difference(a), [4, 5]))
+        assert a.subset(b) == False
+        assert a.subset(a) == True
+
 
 if __name__ == '__main__':
     unittest.main()
