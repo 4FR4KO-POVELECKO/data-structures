@@ -3,6 +3,7 @@ import unittest
 from arr import Array
 from linked_list import LinkedList
 from que import Queue
+from stack import Stack
 
 
 class TestDataStructures(unittest.TestCase):
@@ -50,6 +51,16 @@ class TestDataStructures(unittest.TestCase):
         assert queue.head.data == 2
         assert queue.head.next == None
 
+    def test_stack(self):
+        stack = Stack()
+        stack.push(1)
+        stack.push(2)
+
+        assert stack.head.data == 2
+        assert stack.head.next.data == 1
+        stack.pop()
+        assert stack.head.data == 1
+        assert stack.head.next == None
 
 if __name__ == '__main__':
     unittest.main()

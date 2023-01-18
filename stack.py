@@ -25,12 +25,3 @@ class Stack:
 
     def __str__(self):
         return self.pip()
-
-
-if __name__ == "__main__":
-    stack = Stack()
-    stack.push(1)
-    stack.push(2)
-    print(stack.pip())
-    stack.pop()
-    print(stack)
