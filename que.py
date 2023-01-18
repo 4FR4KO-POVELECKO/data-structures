@@ -27,13 +27,3 @@ class Queue:
             result += f'{last.data}, '
             last = last.next
         return result[:-2] + ']'
-
-
-if __name__ == "__main__":
-    queue = Queue()
-    queue.enqueue(1)
-    queue.enqueue(2)
-    print(queue)
-    queue.dequeue()
-    print(queue)
-

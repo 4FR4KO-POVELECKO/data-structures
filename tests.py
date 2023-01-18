@@ -2,12 +2,13 @@ import unittest
 
 from arr import Array
 from linked_list import LinkedList
+from que import Queue
 
 
 class TestDataStructures(unittest.TestCase):
     def test_array(self):
         arr = Array()
-        
+
         arr.append(1)
         assert arr.cap == 1
         arr.append(2)
@@ -37,6 +38,15 @@ class TestDataStructures(unittest.TestCase):
 
         linked_list.remove(0)
         assert linked_list.get(0) == 2
+
+    def test_queue(self):
+        queue = Queue()
+        queue.enqueue(1)
+        queue.enqueue(2)
+
+        assert queue.head.data == 1
+        queue.dequeue()
+        assert queue.head.data == 2
 
 
 if __name__ == '__main__':
