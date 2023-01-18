@@ -62,16 +62,3 @@ class LinkedList:
             result += f'{last.data}, '
             last = last.next
         return result[:-2] + ']' 
-
-
-if __name__ == "__main__":
-    linked_list = LinkedList()
-    linked_list.add(1)
-    linked_list.add(2)
-    print('Index: 0 Data: ', linked_list.get(0))
-    print('Data: 1 Index: ', linked_list.search(1))
-    print('Data: 0 Index: ', linked_list.search(0))
-    print(linked_list)
-    linked_list.remove(0)
-    print(linked_list)
-

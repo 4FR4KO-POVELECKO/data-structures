@@ -43,14 +43,3 @@ class Array:
 
     def _make_array(self, cap):
         return (cap * ctypes.py_object)()
-
-
-if __name__ == "__main__":
-    array = Array()
-    array.append(1)
-    print(array.cap)
-    array.append(2)
-    array.append(3)
-    print(array)
-    print(len(array))
-    print(array.cap)

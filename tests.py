@@ -1,6 +1,7 @@
 import unittest
 
 from arr import Array
+from linked_list import LinkedList
 
 
 class TestDataStructures(unittest.TestCase):
@@ -22,6 +23,20 @@ class TestDataStructures(unittest.TestCase):
         assert arr[0] == 100
 
         assert len(arr) == 3
+
+    def test_linked_list(self):
+        linked_list = LinkedList()
+        
+        linked_list.add(1)
+        linked_list.add(2)
+        assert linked_list.get(0) == 1
+        assert linked_list.get(1) == 2
+        
+        assert linked_list.search(1) == 0
+        assert linked_list.search(100) is None
+
+        linked_list.remove(0)
+        assert linked_list.get(0) == 2
 
 
 if __name__ == '__main__':
