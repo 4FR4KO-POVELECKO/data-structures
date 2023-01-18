@@ -5,6 +5,18 @@ class LinkedList:
     def __init__(self):
         self.head = None
 
+    def __iter__(self):
+        self._old_head = self.head
+        return self
+
+    def __next__(self):
+        if self.head:
+            x = self.head
+            self.head = self.head.next
+            return x.data
+        self.head = self._old_head
+        raise StopIteration
+
     def search(self, data):
         last = self.head
         index = 0
