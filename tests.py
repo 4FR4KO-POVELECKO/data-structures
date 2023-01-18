@@ -45,8 +45,10 @@ class TestDataStructures(unittest.TestCase):
         queue.enqueue(2)
 
         assert queue.head.data == 1
+        assert queue.head.next.data == 2
         queue.dequeue()
         assert queue.head.data == 2
+        assert queue.head.next == None
 
 
 if __name__ == '__main__':
