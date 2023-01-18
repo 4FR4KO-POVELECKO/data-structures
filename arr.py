@@ -7,6 +7,17 @@ class Array:
         self.cap = 1
         self._a = self._make_array(self.cap)
 
+    def __iter__(self):
+        self._iter = 0
+        return self
+
+    def __next__(self):
+        if self.n != self._iter:
+            next = self._a[self._iter]
+            self._iter += 1
+            return next
+        raise StopIteration
+
     def __str__(self):
         if self.n == 0:
             return '[]'
